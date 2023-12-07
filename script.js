@@ -1,13 +1,8 @@
-/*
-toDo
-Adicionar o ponto para o usuario fazer operaçoes com casas decimais
-Adicionar um botao de backspace
-*/
-
 let num1 = ''
 let num2 = ''
 let operator
 let modoOperador = false
+let isDot = false
 let displayValue = document.querySelector('#display')
 let clear = document.querySelector('#clear')
 let equals = document.querySelector('#equals')
