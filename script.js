@@ -1,3 +1,11 @@
+/*
+toDo
+Arredondar o resultado pra até duas casas decimais
+Adicionar lógica para não precisar apertar o igual para fazer o cálculo
+Adicionar o ponto para o usuario fazer operaçoes com casas decimais
+Adicionar um botao de backspace
+*/
+
 let num1
 let num2 
 let operator
@@ -23,7 +31,12 @@ equals.addEventListener('click', () => {
     operate(operator, num1, num2)
 })
 
-clear.addEventListener('click', () => displayValue.innerText =  '')
+clear.addEventListener('click', () => {
+    displayValue.innerText =  ''
+    num1 = 0
+    num2 = 0
+    operator = ''
+})
 
 function operate(operator, num1, num2) {
     if (operator === '+') {
