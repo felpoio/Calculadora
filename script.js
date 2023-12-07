@@ -11,6 +11,7 @@ let modoOperador = false
 let displayValue = document.querySelector('#display')
 let clear = document.querySelector('#clear')
 let equals = document.querySelector('#equals')
+let deleteButton = document.querySelector('#delete')
 
 function mostraDisplay(elem) {
     if (modoOperador === true) {
@@ -53,6 +54,10 @@ clear.addEventListener('click', () => {
     num1 = ''
     num2 = ''
     operator = ''
+})
+
+deleteButton.addEventListener('click', () => {
+    displayValue.innerText = displayValue.innerText.slice(0, -1)
 })
 
 function operate(operator, num1, num2) {
