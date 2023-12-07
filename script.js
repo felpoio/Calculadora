@@ -1,6 +1,5 @@
 /*
 toDo
-Arredondar o resultado pra até duas casas decimais
 Adicionar o ponto para o usuario fazer operaçoes com casas decimais
 Adicionar um botao de backspace
 */
@@ -64,6 +63,6 @@ function operate(operator, num1, num2) {
     } else if (operator === 'x'){
         return num1 * num2
     } else if (operator === '/'){
-        return num1 / num2
+        return (num1 / num2).toFixed(2)
     }
 }
