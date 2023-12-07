@@ -1,51 +1,69 @@
 /*
 toDo
 Arredondar o resultado pra até duas casas decimais
-Adicionar lógica para não precisar apertar o igual para fazer o cálculo
 Adicionar o ponto para o usuario fazer operaçoes com casas decimais
 Adicionar um botao de backspace
 */
 
-let num1
-let num2 
+let num1 = ''
+let num2 = ''
 let operator
+let modoOperador = false
 let displayValue = document.querySelector('#display')
 let clear = document.querySelector('#clear')
 let equals = document.querySelector('#equals')
 
 function mostraDisplay(elem) {
-    displayValue.textContent += elem.innerText
-    console.log(elem.innerText)
+    if (modoOperador === true) {
+        displayValue.textContent = ''
+        displayValue.textContent += elem.innerText
+        modoOperador = false
+    } else {
+        displayValue.textContent += elem.innerText
+    }
 }
 
 function selecionaOperador(elem) {
-    num1 = displayValue.innerText
-    displayValue.innerText= ''
-    operator = elem.innerText
+    modoOperador = true
+    if (num1 === ''){
+        num1 = displayValue.innerText
+        operator = elem.innerText
+        console.log(num1)
+    } else {
+        num2 = displayValue.innerText
+        operator = elem.innerText
+        num1 = parseInt(num1)
+        num2 = parseInt(num2)
+        console.log(num1)
+        console.log(num2)
+        displayValue.innerText = operate(operator, num1, num2)
+        num1 = displayValue.innerText
+    }
 }
 
 equals.addEventListener('click', () => {
     num2 = displayValue.innerText
     num1 = parseInt(num1)
     num2 = parseInt(num2)
-    operate(operator, num1, num2)
+    displayValue.innerText = operate(operator, num1, num2)
+    num1 = displayValue.innerText
 })
 
 clear.addEventListener('click', () => {
     displayValue.innerText =  ''
-    num1 = 0
-    num2 = 0
+    num1 = ''
+    num2 = ''
     operator = ''
 })
 
 function operate(operator, num1, num2) {
     if (operator === '+') {
-        displayValue.innerText = num1 + num2
+        return num1 + num2
     } else if (operator === '-'){
-        displayValue.innerText = num1 - num2
+        return num1 - num2
     } else if (operator === 'x'){
-        displayValue.innerText = num1 * num2
+        return num1 * num2
     } else if (operator === '/'){
-        displayValue.innerText = num1 / num2
+        return num1 / num2
     }
 }
