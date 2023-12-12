@@ -21,7 +21,7 @@ body {
 
 #container {
     background-color: #212121;
-    width: 255px;
+    width: 280px;
 }
 
 #display {
@@ -34,17 +34,27 @@ body {
 }
 
 button {
+    height: 60px;
+    line-height: 60px;  
+    width: 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50%;
     color: #DFDFDF;
     background-color: #616161;
-    font-size: 18px;
-    padding: 20px 25px;
-    border-radius: 50px;
+    text-align: center;
     border: 0;
+}
+
+.double {
+    width: 125px;
+    border-radius: 50px;
 }
 
 button:hover {
     background-color: #BDBDBD;
     color: #212121;
+    cursor: pointer;
 }
 
 footer {
