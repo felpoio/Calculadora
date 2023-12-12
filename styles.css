@@ -12,12 +12,31 @@ body {
 }
 
 #container {
-    border: 1px solid black;
+    background-color: #212121;
+    width: 255px;
 }
 
 #display {
-    border: 1px solid red;
-    padding: 20px 20px;
+    background-color: #3B3B3B;
+    padding: 20px;
+}
+
+#numbers {
+    flex-wrap: wrap;
+}
+
+button {
+    color: #DFDFDF;
+    background-color: #616161;
+    font-size: 18px;
+    padding: 20px 25px;
+    border-radius: 50px;
+    border: 0;
+}
+
+button:hover {
+    background-color: #BDBDBD;
+    color: #212121;
 }
 
 footer {
