@@ -13,6 +13,9 @@ function mostraDisplay(elem) {
         displayValue.textContent = ''
         displayValue.textContent += elem.innerText
         modoOperador = false
+    } else if (displayValue.textContent === '0') {
+        displayValue.textContent = ''
+        displayValue.textContent += elem.innerText
     } else {
         displayValue.textContent += elem.innerText
     }
@@ -45,14 +48,20 @@ equals.addEventListener('click', () => {
 })
 
 clear.addEventListener('click', () => {
-    displayValue.innerText =  ''
+    displayValue.innerText =  '0'
     num1 = ''
     num2 = ''
     operator = ''
 })
 
 deleteButton.addEventListener('click', () => {
-    displayValue.innerText = displayValue.innerText.slice(0, -1)
+    if (displayValue.innerText !== '0'){
+        if (displayValue.innerText.slice(0, -1) === ''){
+            displayValue.innerText = '0'
+        } else {
+            displayValue.innerText = displayValue.innerText.slice(0, -1)
+        }
+    }
 })
 
 function operate(operator, num1, num2) {
