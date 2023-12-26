@@ -29,12 +29,12 @@ function selecionaOperador(elem) {
         console.log(num1)
     } else {
         num2 = displayValue.innerText
-        operator = elem.innerText
         num1 = parseInt(num1)
         num2 = parseInt(num2)
         console.log(num1)
         console.log(num2)
         displayValue.innerText = operate(operator, num1, num2)
+        operator = elem.innerText
         num1 = displayValue.innerText
     }
 }
